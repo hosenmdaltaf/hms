@@ -11,12 +11,13 @@ from .forms import UserRegisterForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.views.decorators.csrf import csrf_protect
-
+from django.contrib.auth.models import User
 
 
 
 def account(request):
-    my_profile = Appointment.objects.all()
+    # my_profile = Appointment.objects.all()
+    my_profile = Appointment.objects.filter(patient=request.user)
     return render(request,'accounts/account.html',{'my_profile':my_profile})
 
 
