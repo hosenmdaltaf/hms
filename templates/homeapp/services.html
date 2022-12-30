@@ -2,44 +2,54 @@
 {% load static %}
 {% block content %}
 
-
-{% include 'homeapp/navbar.html' %}
-
-<div id="about" class="section wow fadeIn header-margin">
+<section class="inner-header">
    <div class="container">
-      <div class="heading">
-         <span class="icon-logo"><img src="{% static 'images/icon-logo.png' %}" alt="#"></span>
-         <h2>The Specialist Clinic</h2>
-      </div>
-
-<div class="row">
-
-   
-   {% for service in departments %}
-   <div class="col-md-3 col-sm-6 col-xs-12">
-      <a href="{% url 'homeapp:departmentdetails' service.pk %}" >
-      <div class="service-widget">
-         <div class="post-media wow fadeIn">
-            <img src="{{service.image.url}}" alt="" class="img-responsive">
+      <div class="row">
+         <div class="col-md-12 sec-title colored text-center">
+            <h2>Services</h2>
+            <ul class="breadcumb">
+               <li><a href="#">Home</a></li>
+               <li><i class="fa fa-angle-right"></i></li>
+               <li><span>Services</span></li>
+            </ul>
+            <span class="decor"><span class="inner"></span></span>
          </div>
-         <h3>{{service.name}}</h3>
       </div>
-   </a>
-      <!-- end service -->
    </div>
-   
-   {% endfor %}
-
-
-</div>
-
-</div>
-</div>
+</section>
 
 
 
+<section class="home-serivce sec-pdd-90">
+   <div class="container">
+      <div class="sec-title text-center">
+         <h2>Our Service</h2>
+         <p>Lorem ipsum is a dummy text it will use for subtitle here</p>
+         <span class="decor"><span class="inner"></span></span>
+      </div>
+      <div class="row">
 
-{% include 'homeapp/footer.html' %}
+
+         {% for service in services %}
+         <div class="col-md-4 col-sm-6">
+            <div class="single-service-home item-margin-top">
+               {% comment %} <div class="icon-box">
+                  <div class="inner-box">
+                     <i class="flaticon-medical-3"></i>
+                  </div>
+               </div> {% endcomment %}
+               <div class="content">
+                  <h3>{{service.name}}</h3> 
+                  <p>{{service.details|truncatechars_html:60|safe}}</p>
+                  <a href="{% url 'homeapp:services_details_page' service.pk %}">Read More</a>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+</section>
+
 
 
 {% endblock %}

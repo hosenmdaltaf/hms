@@ -1,17 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
-# from hospitalapp.models import Department
-
-
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
-    profile_picture = models.ImageField(upload_to='profile_picture',default='man.png')
-    full_name=  models.CharField(max_length=30,null=True,blank=True)
-    email= models.EmailField(max_length=60)
-    date_joined	= models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return str(self.user)
+from django.utils.html import mark_safe
+from django.conf import settings
 
 
 class Doctor(models.Model):
@@ -23,3 +12,7 @@ class Doctor(models.Model):
 
     def __str__(self):
         return self.name
+
+    def image_tag(self):
+        if self.image != '':
+            return mark_safe('<img src="%s%s" width="50" height="50" />' % (f'{settings.MEDIA_URL}', self.image))

@@ -4,7 +4,8 @@ from .import views
 
 app_name='contactapp'
 
-urlpatterns = [
-    path('contact/', views.contact, name='contactpage'),
+urlpatterns = [ 
+    path('', views.contact, name='contactpage'),
+    path('appoinment/', views.appoinment, name='appoinment_page'),
 ]
       

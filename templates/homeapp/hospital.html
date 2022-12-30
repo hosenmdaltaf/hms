@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="inner-header">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12 sec-title colored text-center">
+            <h2>Hospital</h2>
+            <ul class="breadcumb">
+               <li><a href="#">Home</a></li>
+               <li><i class="fa fa-angle-right"></i></li>
+               <li><span>Hospital</span></li>
+            </ul>
+            <span class="decor"><span class="inner"></span></span>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section class="home-serivce sec-pdd-90">
+   <div class="container">
+      <div class="sec-title text-center">
+         <h2>Our Hospital Service</h2>
+         <p>Lorem ipsum is a dummy text it will use for subtitle here</p>
+         <span class="decor"><span class="inner"></span></span>
+      </div>
+      <div class="row"> 
+         {% for hos in hospital %}
+         <div class="col-md-4 col-sm-6">
+            <div class="single-service-home item-margin-top"> 
+               {% comment %} <div class="icon-box">
+                  <div class="inner-box">
+                     <i class="flaticon-medical-3"></i>
+                  </div>
+               </div> {% endcomment %}
+               <div class="content">
+                  <h3>{{hos.name}}</h3>  
+                  <p>{{hos.details|truncatechars_html:60|safe}}</p>
+                  <a href="{% url 'homeapp:hospital_details' hos.pk %}">Read More</a>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+</section>
+
+
+
+{% endblock %}
+
+
+

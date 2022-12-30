@@ -1,0 +1,66 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 03/04/2017 03:54
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("Flaticon.eot");
+  src: url("Flaticond41d.eot?#iefix") format("embedded-opentype"),
+       url("Flaticon.woff") format("woff"),
+       url("Flaticon.ttf") format("truetype"),
+       url("Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-style: normal;
+}
+
+.flaticon-medical-9:before { content: "\f100"; }
+.flaticon-medical-8:before { content: "\f101"; }
+.flaticon-tool-1:before { content: "\f102"; }
+.flaticon-tool:before { content: "\f103"; }
+.flaticon-medical-7:before { content: "\f104"; }
+.flaticon-medical-6:before { content: "\f105"; }
+.flaticon-medical-5:before { content: "\f106"; }
+.flaticon-medical-4:before { content: "\f107"; }
+.flaticon-toothbrush:before { content: "\f108"; }
+.flaticon-coin-of-dollar:before { content: "\f109"; }
+.flaticon-badge:before { content: "\f10a"; }
+.flaticon-graduate-cap:before { content: "\f10b"; }
+.flaticon-medal:before { content: "\f10c"; }
+.flaticon-chat-comment-oval-speech-bubble-with-text-lines:before { content: "\f10d"; }
+.flaticon-smile:before { content: "\f10e"; }
+.flaticon-first-aid-kit:before { content: "\f10f"; }
+.flaticon-stethoscope:before { content: "\f110"; }
+.flaticon-trophy:before { content: "\f111"; }
+.flaticon-teeth-cleaning:before { content: "\f112"; }
+.flaticon-premolar:before { content: "\f113"; }
+.flaticon-dental-prosthesis:before { content: "\f114"; }
+.flaticon-medical-3:before { content: "\f115"; }
+.flaticon-medical-2:before { content: "\f116"; }
+.flaticon-medical-1:before { content: "\f117"; }
+.flaticon-medical:before { content: "\f118"; }
+.flaticon-day-15-on-calendar:before { content: "\f119"; }
+.flaticon-dental-review:before { content: "\f11a"; }
+.flaticon-tooth:before { content: "\f11b"; }
+.flaticon-seo-consulting:before { content: "\f11c"; }
+.flaticon-interface:before { content: "\f11d"; }
+.flaticon-consulting:before { content: "\f11e"; }
+.flaticon-symbol:before { content: "\f11f"; }
+.flaticon-cloud:before { content: "\f120"; }
+.flaticon-technology:before { content: "\f121"; }
+.flaticon-placeholder:before { content: "\f122"; }
+.flaticon-square:before { content: "\f123"; }
+.flaticon-quality:before { content: "\f124"; }

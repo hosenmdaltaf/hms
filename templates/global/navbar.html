@@ -1,0 +1,111 @@
+
+{% load static %}
+
+{% block content %}
+	<section class="top-bar">
+		<div class="container">
+
+			<div class="left-text pull-left">
+				<p><span>Opening Hours :</span> Monday to Saturday - 8am to 5pm</p>
+			</div> <!-- /.left-text -->
+
+			<div class="social-icons pull-right">
+				<ul>
+					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+				</ul>
+			</div> <!-- /.social-icons -->
+		</div>
+	</section> <!-- /.top-bar -->
+
+	<header class="header">
+		<div class="container">
+			<div class="logo pull-left">
+				<a href="index.html">
+					<img src="img/resources/logo.png" alt="Awesome Image"/>
+				</a>
+			</div>
+			<div class="header-right-info pull-right clearfix">
+				<div class="single-header-info">
+					<div class="icon-box">
+						<div class="inner-box">
+							<i class="flaticon-symbol"></i>
+						</div>
+					</div>
+					<div class="content">
+						<h3>EMAIL</h3>
+						<p>companyname@mail.com</p>
+					</div>
+				</div>
+				<div class="single-header-info">
+					<div class="icon-box">
+						<div class="inner-box">
+							<i class="flaticon-technology"></i>
+						</div>
+					</div>
+					<div class="content">
+						<h3>Call Now</h3>
+						<p><b>(732) 803-010-03</b></p>
+					</div>
+				</div>
+				<div class="single-header-info">
+					<a href="{% url 'contactapp:appoinment_page' %}" class="thm-btn">Appointment</a>
+				</div>
+			</div>
+		</div>
+	</header> <!-- /.header -->
+
+
+	<nav class="mainmenu-area stricky">
+		<div class="container">
+			<div class="navigation pull-left">
+				<div class="nav-header"> 
+					<ul>
+				
+						<li><a href="{% url 'homeapp:homepage' %}">Home</a></li>
+						<li><a href="{% url 'homeapp:aboutpage' %}">About Us</a></li> 
+
+						<li class="dropdown">
+							<a href="#">Depertments</a>
+							<ul class="submenu">
+								{% for depertment in depertments   %}
+								<li><a href="{% url 'homeapp:departmentdetails' depertment.pk %}">{{depertment.name}}</a></li>
+								{% endfor %}
+							</ul>
+						</li> 
+
+						<li class="dropdown">
+							<a href="#">Diagnostic</a>
+							<ul class="submenu">
+								{% for diagnostic in diagnostics %}
+								<li><a href="{% url 'homeapp:diagnostic_details' diagnostic.pk %}">{{diagnostic.name}}</a></li>
+								{% endfor %}
+							</ul>
+						</li> 
+				
+						<li><a href="{% url 'homeapp:doctorpage' %}">Doctors</a></li> 
+						<li><a href="{% url 'homeapp:hospital_page' %}">Hospital</a></li>   
+						
+						<li><a href="{% url 'homeapp:services_page' %}">Services</a></li>  
+						<li><a href="{% url 'homeapp:test_price_list' %}">Price</a></li>
+				
+						<li><a href="{% url 'blogapp:blogs' %}">Blog</a></li>
+						<li><a href="{% url 'contactapp:contactpage' %}">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="nav-footer">
+					<button><i class="fa fa-bars"></i></button>
+				</div>
+			</div>
+			<div class="search-box pull-right navbar-box">
+				<form action="#">
+					<input type="text" placeholder="Search...">
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div> 
+	</nav> <!-- /.mainmenu-area -->
+
+{% endblock %}

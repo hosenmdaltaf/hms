@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,8 +26,8 @@ SECRET_KEY = 'w7v(vvd^cm&388k785ffmb-u**a%mgpi+n!xl49@%l-+#)lw44'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = ['clinic.apagroupbd.com','www.clinic.apagroupbd.com']
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -34,9 +35,10 @@ INSTALLED_APPS = [
     'homeapp.apps.HomeappConfig',
     'contactapp.apps.ContactappConfig',
     'profileapp.apps.ProfileappConfig',
-    'accounts.apps.AccountsConfig',
+    'blogapp.apps.BlogappConfig',
 
-    'crispy_forms',
+    'admin_volt.apps.AdminVoltConfig',
+    'django_summernote',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -69,6 +71,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'homeapp.context_processors.get_depertment_to_context',
+                'homeapp.context_processors.get_blog_to_context',
+                'homeapp.context_processors.get_diagnostict_to_context',
             ],
         },
     },
@@ -124,13 +129,28 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+# STATIC_URL = '/static/'
+# STATIC_ROOT = '/home/apaggwjb/clinic.apagroupbd.com/static'
+
+# MEDIA_URL = '/media/'
+
+# MEDIA_ROOT = '/home/apaggwjb/clinic.apagroupbd.com/media'
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+ }
+
+
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = '/home/apaggwjb/clinic.apagroupbd.com/static'
 
 MEDIA_URL = '/media/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/home/apaggwjb/clinic.apagroupbd.com/media'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

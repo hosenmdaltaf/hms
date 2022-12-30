@@ -8,8 +8,9 @@ urlpatterns = [
     path('', include('homeapp.urls')),
     path('profile/', include('profileapp.urls')),
     path('contact/', include('contactapp.urls')),
-    path('accounts/', include('accounts.urls')),
-   
+    path('blogs/', include('blogapp.urls')),
+
+    path('summernote/', include('django_summernote.urls')),
 ]
 if settings.DEBUG:
     #urlpatterns += staticfiles_urlpatterns()

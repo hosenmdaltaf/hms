@@ -1,0 +1,95 @@
+
+{% load static %}
+
+{% block content %}
+
+<section class="footer-call-to-action">
+	<div class="container">
+	   <div class="row">
+		  <div class="col-md-9">
+			 <h3>Book A Appointment With US</h3>
+			 <p>There are many variations of passages of Lorem Ipsum available, but the majority have lorem</p>
+		  </div>
+		  <div class="col-md-3">
+			 <a href="{% url 'contactapp:appoinment_page' %}" target="_blank" class="thm-btn inverse pull-right">Book Now</a> 
+		  </div>
+	   </div>
+	</div>
+ </section>
+
+	<footer class="footer sec-pdd-90-85">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="footer-widget about-widget">
+						<a href="#">
+							<img src="img/resources/footer-logo.png" alt="Awesome Image"/>
+						</a>
+						<p>Lorem ipsum dolor sit amet, eu me evert laboramus, iudico </p>
+						<ul class="contact">
+							<li><i class="fa fa-map-marker"></i> <span>60 Grant Ave. Carteret NJ 0708</span></li>
+							<li><i class="fa fa-phone"></i> <span>(880) 1723801729</span></li>
+							<li><i class="fa fa-envelope-o"></i> <span>example@gmail.com</span></li>
+						</ul>
+						<ul class="social">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="footer-widget quick-links">
+						<h3 class="title">Depertments</h3>
+						<ul>
+						{% for depertment in depertments   %}
+							<li><a href="{% url 'homeapp:departmentdetails' depertment.pk %}">{{depertment.name}}</a></li>
+						{% endfor %}
+						</ul>
+					</div>
+				</div>
+
+
+				<div class="col-md-4 latest-post col-sm-6">
+					<div class="footer-widget latest-post itm-mgn-top-50">
+						<h3 class="title">Latest News</h3>
+						<ul>
+					
+							{% for blog in blogs %}
+							<li>
+								<span class="border"></span>
+								<div class="content">
+									<a href="blog-details.html">{{blog.title|truncatechars_html:60}} </a>
+									<span>{{blog.post_date}}</span>
+								</div>
+							</li>
+							{% endfor %}
+						
+						</ul>
+					</div>
+				</div>
+				{% comment %} <div class="col-md-4 col-sm-6">
+					<div class="footer-widget contact-widget itm-mgn-top-50">
+						<h3 class="title">Contact Form</h3>
+						<form action="https://world5.commonsupport.com/jewel/Dentalclinic/inc/sendemail.php" class="contact-form" id="footer-cf">
+							<input type="text" name="name"  placeholder="Full Name">
+							<input type="text" name="email" placeholder="Email Address" >
+							<textarea name="message" placeholder="Your Message"></textarea>
+							<button type="submit">Send</button>
+						</form>
+					</div>
+				</div> {% endcomment %}
+			</div>
+		</div>
+	</footer>
+
+
+	<section class="footer-bottom">
+		<div class="container text-center">
+			<p>Theme Created By <a href="#">Dhaka Solution</a> with love</p>
+		</div>
+	</section>
+
+{% endblock %}

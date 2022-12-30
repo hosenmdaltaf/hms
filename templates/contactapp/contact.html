@@ -1,79 +1,98 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
 
-{% include 'homeapp/navbar.html' %}
-
-<div class="heading">
-    <span class="icon-logo"><img src="{% static 'images/icon-logo.png' %}" alt="#"></span>
-    <h2>The Specialist Doctors</h2>
- </div>
-
-<!-- pink-banner -->
-<div class="banner-1">
-    <div class="banner-overlay">
-         <div class="container">
-         <div class="wthree_head_section">
-             <h3 class="pinkl_header">Contact <span>Us</span></h3>
-             <p>Sunflower Hospitalscen ester pine est chill wave microdosing pop uple itarian cliche artisan.</p>
-         </div>    
-     </div>
-     </div>
- </div>
- <!-- //banner -->
+ 
+ <section class="inner-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 sec-title colored text-center">
+                <h2>Contact Us</h2>
+                <ul class="breadcumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><i class="fa fa-angle-right"></i></li>
+                    <li><span>Contact Us</span></li>
+                </ul>
+                <span class="decor"><span class="inner"></span></span>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
-  <!-- contact -->
- <section class="contact-pinkls">
-     <div class="container">
-         <div class="con-top">
-             <div class="col-lg-6 col-md-6 col-sm-6 contact-pink-agile1" data-aos="flip-right">
-                 <!-- <div class="contact-agileits"> -->
-                     <h4 class="pinkl-contact">Get In Touch</h4> 
+<section class="contact-content sec-pdd-90-45">
+    <div class="container">
+        <div class="sec-title text-center">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been <br> the industry's standard dummy text ever since the 1500s, when an unknownto </p>
+        </div>
+        <div class="google-map" id="contact-page-google-map" data-icon-path="img/resources/map-marker.png" data-map-lat="-37.812802" data-map-lng="144.956981" data-map-zoom="10" data-map-title="Envato HQ"></div>
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Contact Form</h2>
+                <form  action="" method="POST" enctype="multipart/form-data" class="contact-form row">
+                    {% csrf_token %}   
+                    <div class="col-md-12">
+                        {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
 
-                     <!-- <div id="popup1" class="overlay"> -->
-                   
-                            <div class="content">
-                              
-                                <form action="" method="POST" enctype="multipart/form-data">  
-                                    {% csrf_token %}    
-                                    <input name="name" type="text" class="feedback-input" placeholder="Name" />
-                                
-                                    <input required name="phonenumber" type="text" class="feedback-input" placeholder="write your phone number" />
-                                    <textarea name="message" class="feedback-input" placeholder="write your query"></textarea>
-                                    <input type="submit" value="SUBMIT"/>
-                                  </form>
-                    
-                                </div> 
-                    
-                            </div> 
-                          
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="text" required name="phonenumber"  placeholder="Phone">
+                        <textarea name="message" placeholder="Message" cols="30" rows="10"></textarea>
+                    </div>
+        
+                    <div class="col-md-12">
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 itm-mgn-top-50">
+                <h2>Address</h2>
+                <ul class="contact-info">
+                    <li>
+                        <div class="icon-box">
+                            <div class="inner">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                        </div>
+                        <div class="content-box">
+                            <h4>Address</h4>
+                            <p>Mirpur New Bazar Road, Block-c, <br>Uttara, Dhaka-1210</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box">
+                            <div class="inner">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                        </div>
+                        <div class="content-box">
+                            <h4>Phone</h4>
+                            <p>(732) 803-01 03, (732) 806-01 04, (880)172380129</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box">
+                            <div class="inner">
+                                <i class="fa fa-envelope-o"></i>
+                            </div>
+                        </div>
+                        <div class="content-box">
+                            <h4>Email</h4>
+                            <p>info@somecompanyname.com, otheremail@gmail.com</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
 
-                 <!-- </div> -->
-             <!-- </div> -->
-             <div class="col-lg-6 col-md-6 col-sm-6 contact-pink-agile1" data-aos="flip-right">
-                 <h4 class="pinkl-contact">Connect With Us</h4> 
-                 
-                 <p class="contact-agile1"><strong>Phone :</strong> 01787064084</p>
-                 <p class="contact-agile1"><strong>Cell :</strong>01812292121</p>
-                 <p class="contact-agile1"><strong>Address :</strong> K R C Shurma Vally, Hotapara Bus Stand, Joydevpur, Gazipur </p>
-             </div>
-             <div class="clearfix"></div>
-         </div>
-     </div>
- </section>
-
-
- <!-- //contact -->
-
-
-
-
-
-
-{% include 'homeapp/footer.html' %}
 
 {% endblock %}

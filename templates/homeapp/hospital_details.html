@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<section class="inner-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 sec-title colored text-center">
+                <h2>{{object.name}}</h2> 
+                <ul class="breadcumb">
+                    <li><a href="#">Home</a></li>
+                    <li><i class="fa fa-angle-right"></i></li>
+                    <li><span>{{object.name}}</span></li>
+                </ul>
+                <span class="decor"><span class="inner"></span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="single_Service" class="sec-pdd-90">
+    <div class="container">
+        <div class="row">
+        
+            <div class="col-lg-3 col-md-3">
+                <div class="service_sideber">
+
+                    
+                    <div class="appointment-content appointment_side_form ">
+                        <h2>Make An Appoinment</h2>
+                        <form action="" method="POST" class="side_form contact-form" > 
+                         {% csrf_token %}
+                            <input class="" type="text"  placeholder="Full name" name="name" />
+                            <input type="text"  placeholder="Phone" name="phone"/>
+                            <input type="text" class="date-picker" name="date" placeholder="Select Date">
+                            <div class="select-input-wrapper">
+                                <select class="select-input" name="department">
+                                    <option value="{{object.name}} " selected="selected">{{object.name}} </option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-info appoin_button">BOOK NOW</button>
+                        </form>
+                    </div>
+                    
+                    
+                    <div class="question_Box">
+                        <h2>Any Question ? Contact us</h2>
+                        <hr />
+                        
+                        <div class="qustion_list">
+                            <ul>
+                                <li><i class="flaticon-telephone5"></i><a href="#">+082 01723801729</a></li>
+                                <li><i class="flaticon-email147"></i><a href="#">companymail@gmail.com</a></li>
+                            </ul>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-9 col-md-9">
+                <div class="tab-content">
+                    <div class="service_mainconetent" id="invisalign">
+                    
+                        <div class="about_box">
+                            <img src="{{ object.image.url }}"  alt="" />
+                            <h2>{{object.name}} </h2>  
+                            <p>{{object.details|safe}}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
